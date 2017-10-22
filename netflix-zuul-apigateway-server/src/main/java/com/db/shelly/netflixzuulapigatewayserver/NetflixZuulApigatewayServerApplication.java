@@ -1,19 +1,19 @@
-package com.db.shelly.currencyconversionservice;
+package com.db.shelly.netflixzuulapigatewayserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
-@EnableFeignClients("com.db.shelly.currencyconversionservice")
+@EnableZuulProxy
 @EnableDiscoveryClient
-public class CurrencyConversionServiceApplication {
+@SpringBootApplication
+public class NetflixZuulApigatewayServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CurrencyConversionServiceApplication.class, args);
+		SpringApplication.run(NetflixZuulApigatewayServerApplication.class, args);
 	}
 	
 	@Bean
